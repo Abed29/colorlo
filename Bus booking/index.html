@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Booking System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <h1>BusGo</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#search">Book Ticket</a>
+    <a href="#bookings">My Bookings</a>
+    <button id="toggleTheme">🌙</button>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <h2>Book Your Bus Tickets Easily</h2>
+
+  <div class="search-box" id="search">
+    <input id="from" placeholder="From (e.g. Guwahati)">
+    <input id="to" placeholder="To (e.g. Tezpur)">
+    <input type="date" id="date">
+    <button onclick="searchBuses()">Search Buses</button>
+  </div>
+</section>
+
+<!-- ================= BUS LIST ================= -->
+<section id="busList"></section>
+
+<!-- ================= SEAT SECTION ================= -->
+<section id="seatSection" class="hidden">
+  <h2>Select Your Seats</h2>
+
+  <div id="seatContainer"></div>
+
+  <div class="summary">
+    <p>Selected Seats: <span id="selectedSeatsText">None</span></p>
+    <p>Total Fare: ₹<span id="total">0</span></p>
+  </div>
+
+  <!-- Passenger Form -->
+  <div class="form">
+    <h3>Passenger Details</h3>
+    <input id="name" placeholder="Full Name">
+    <input id="age" type="number" placeholder="Age">
+    <input id="phone" placeholder="Phone Number">
+    <button onclick="confirmBooking()">Proceed to Payment</button>
+  </div>
+</section>
+
+<!-- ================= BOOKINGS ================= -->
+<section id="bookings">
+  <h2>My Bookings</h2>
+  <div id="bookingList"></div>
+</section>
+
+<!-- ================= PAYMENT MODAL ================= -->
+<div id="paymentModal" class="modal hidden">
+  <div class="modal-content">
+
+    <h2>Secure Payment</h2>
+
+    <!-- Tabs -->
+    <div class="payment-tabs">
+      <button onclick="selectPayment('upi')">UPI</button>
+      <button onclick="selectPayment('card')">Card</button>
+    </div>
+
+    <!-- UPI -->
+    <div id="upiSection">
+      <input id="upiId" placeholder="Enter UPI ID (example@upi)">
+    </div>
+
+    <!-- CARD -->
+    <div id="cardSection" class="hidden">
+      <input placeholder="Card Number">
+      <input placeholder="Expiry (MM/YY)">
+      <input placeholder="CVV">
+    </div>
+
+    <p><strong>Total Payable: ₹<span id="payAmount"></span></strong></p>
+
+    <button onclick="processPayment()">Pay Now</button>
+    <button onclick="closePayment()">Cancel</button>
+
+  </div>
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script src="script.js" defer></script>
+
+</body>
+</html>

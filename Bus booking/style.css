@@ -1,0 +1,125 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f5f7fa;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #1e3a8a;
+  color: #fff;
+}
+
+.navbar a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px;
+  background: #3b82f6;
+  color: #fff;
+}
+
+.search-box input,
+.search-box button {
+  margin: 5px;
+  padding: 10px;
+}
+
+#busList {
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#seatContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  gap: 10px;
+}
+
+.seat {
+  width: 50px;
+  height: 50px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.selected {
+  background: green;
+  color: #fff;
+}
+
+.booked {
+  background: red;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.form input {
+  display: block;
+  margin: 5px 0;
+  padding: 8px;
+}
+
+/* Dark Mode */
+.dark {
+  background: #111;
+  color: #eee;
+}
+
+.dark .card {
+  background: #222;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.payment-tabs button {
+  margin: 5px;
+  padding: 8px;
+}
+
+.modal input {
+  display: block;
+  width: 90%;
+  margin: 8px auto;
+  padding: 8px;
+}
+
+.hidden {
+  display: none;
+}
